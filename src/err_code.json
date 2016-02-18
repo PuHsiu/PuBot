@@ -1,0 +1,6 @@
+{
+    "400": {
+        "code": 400,
+        "description": "Need more arguments."
+    }
+}

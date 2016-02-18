@@ -1,0 +1,4 @@
+{
+    "token":"YOUR_BOT_API_TOKEN",
+    "chat_id": "YOUR_CHATROOM_ID"
+}
