@@ -28,9 +28,13 @@ module.exports = (function(){
 
     var handlers = {};
 
-    handlers.echo = ( ...args )=>{
-        return {
+    handlers.echo = ( args )=>{
+
+        var options = {
             msg: args.join(" ")  
+        }
+
+        return [ "echo", options ];
         };
     }
 
