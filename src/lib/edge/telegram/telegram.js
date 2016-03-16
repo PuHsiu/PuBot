@@ -75,14 +75,14 @@ module.exports = (function(){
         return type ? { type, args: tokens } : false;
     }
 
-    var interfaces = new EventEmitter();    
+    var interfaces = new EventEmitter();
     interfaces.on("botAPI", function(mission){
-        telegram.sendMsg(mission.param.msg);   
-    }); 
-    
+        telegram.sendMsg(mission.param.command, mission.param);
+    });
+
     return {
         "name": "Telegram",
         init,
-        interfaces   
+        interfaces
     };
 })();
