@@ -12,6 +12,10 @@ var fs = require('fs'),
         modules[next.module].interfaces.emit( next.port, mission );
     });
 
+    controller.on("error", (mission)=>{
+        console.log(error);
+    });
+
     ["./lib/edge/", "./lib/logic/"].forEach((path) => {
         promiseQueue.push(new Promise((resolve, reject) => {
             fs.readdir(path, (err, files)=>{
