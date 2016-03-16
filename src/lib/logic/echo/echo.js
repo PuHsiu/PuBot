@@ -10,9 +10,7 @@ module.exports = (function(){
 
         var newMission = {
             next: mission.source,
-            param: {
-                msg: mission.param.msg
-            }
+            param: mission.param
         }
 
         controller.emit("logic", newMission);
