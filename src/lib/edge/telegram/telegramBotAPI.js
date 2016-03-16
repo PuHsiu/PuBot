@@ -20,7 +20,7 @@ module.exports = (function(){
 
     var proto = {
         constructor: Telegram,
-        sendMsg: function( command, result ){
+        sendMsg: function( msg ){
             if( !config.chat_id ){
                 throw new Error("Unable to get chat_id. Please spec it in config.json with property: chat_id.");
             }
