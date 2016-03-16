@@ -46,10 +46,11 @@ module.exports = (function(){
 
                         [ mission.next.port, mission.param ] = handlers[command.type](command.args);
                         mission.param.command = command.type;
+
+                        controller.emit( "logic", mission );
                     }
                 }
 
-                controller.emit( "logic", mission );
             }
 
             res.send("^_<");
@@ -57,7 +58,7 @@ module.exports = (function(){
         });
 
         app.listen( process.env.port || 30001, function( ...args ){
-            console.log("Server Started.");    
+            console.log("Server Started.");
         });
     }
 
