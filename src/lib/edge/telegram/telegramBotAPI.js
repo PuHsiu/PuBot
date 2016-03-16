@@ -6,6 +6,18 @@ module.exports = (function(){
     var request = require("request"),
         config = require("./config.json");
 
+    var resultHandler = {
+        echo: (result) => {
+            return result.msg;
+        },
+        kktix: (result) => {
+            var command = result.kkCommand;
+            return result.tickets.map((e)=>{
+                return `${e.ticketType} ${e.closed ? "(售畢)" : ""}`;
+            }).join("\n");
+        }
+    };
+
     var proto = {
         constructor: Telegram,
         sendMsg: function( command, result ){
