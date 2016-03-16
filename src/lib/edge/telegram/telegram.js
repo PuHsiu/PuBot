@@ -28,13 +28,14 @@ module.exports = (function(){
             
             if( message.text ){
 
-                var command = parseUserInput(message.text);
+                let command = parseUserInput(message.text);
 
                 if( command ){
 
                     if( handlers[command.type] ){
 
-                        var mission = {};
+                        let mission = {};
+
                         mission.source = {
                             mId: missionQueue.push(mission),
                             module: "Telegram",
@@ -62,10 +63,12 @@ module.exports = (function(){
 
     function parseUserInput( input ){
 
-        if( input.startsWith("/") ){
-            var tokens = input.slice(1).split(/\s+/);
+        var tokens, type;
 
-            var type = tokens.shift();
+        // Todo: Make "some string" as one token.
+        if( input.startsWith("/") ){
+            tokens = input.slice(1).split(/\s+/);
+            type = tokens.shift();
         }
 
         return type ? { type, args: tokens } : false;
