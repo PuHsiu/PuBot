@@ -25,7 +25,7 @@ module.exports = (function(){
         app.post("/telegram/webhook", function(req, res, next){
 
             var message = req.body.message;
-            
+
             if( message.text ){
 
                 let command = parseUserInput(message.text);

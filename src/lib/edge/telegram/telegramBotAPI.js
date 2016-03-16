@@ -34,6 +34,6 @@ module.exports = (function(){
             botAPI
         }
     };
-    
+
     return Telegram();
 })();
