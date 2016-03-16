@@ -13,7 +13,13 @@ module.exports = (function(){
                 throw new Error("Unable to get chat_id. Please spec it in config.json with property: chat_id.");
             }
             return new Promise((resolve, reject)=>{
-                request.post({url: this.botAPI+"sendMessage", form: {chat_id: config.chat_id, text: msg}}, (err, response, body)=>{
+                request.post({
+                    url: this.botAPI+"sendMessage",
+                    form: {
+                        chat_id: config.chat_id,
+                        text: resultHandler[command](result)
+                    }
+                }, (err, response, body)=>{
                     if( err ) reject(err);
                     resolve( {response, body} );
                 })
