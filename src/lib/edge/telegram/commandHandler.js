@@ -35,7 +35,46 @@ module.exports = (function(){
         }
 
         return [ "echo", options ];
+    }
+
+    handlers.kktix = ( args )=>{
+
+        var options = {};
+
+        var optionsDecorator = {
+            "organization": (args)=>{
+                options.organization = args[0];
+            },
+            "event": (args)=>{
+                options.event = args[0];
+            },
+            "ticket": (args)=>{
+                options.tickets = args;
+            }
         };
+
+        var commandMapping = {
+            "check": "check"
+        }
+
+        if( !commandMapping[args[0]] ){
+            throw new Error(`Command ${args[0]} is not supported.`);
+        }
+
+        var command = commandMapping[args.shift()];
+
+        var commandOptions = parseCommandOption(args);
+
+        Object.keys(commandOptions).forEach((commandOptionType)=>{
+            if( !optionsDecorator[commandOptionType] )
+                throw new Error(`Option ${commandOptionType} is not supported`);
+
+            optionsDecorator[commandOptionType](commandOptions[commandOptionType]);
+        });
+
+        options.kkCommand = command;
+
+        return [command, options];
     }
 
     return handlers;
