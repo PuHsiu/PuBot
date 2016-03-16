@@ -41,10 +41,11 @@ module.exports = (function(){
                         };
 
                         mission.next = {
-                            module: command.type,
-                            port: "exec"
+                            module: command.type
                         };
-                        mission.param = handlers[command.type](command.args);
+
+                        [ mission.next.port, mission.param ] = handlers[command.type](command.args);
+                        mission.param.command = command.type;
                     }
                 }
 

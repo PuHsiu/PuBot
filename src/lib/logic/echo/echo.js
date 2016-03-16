@@ -6,7 +6,7 @@ module.exports = (function(){
 
     var interfaces = new EventEmitter();
 
-    interfaces.on("exec", function( mission ){
+    interfaces.on("echo", function( mission ){
 
         var newMission = {
             next: mission.source,
