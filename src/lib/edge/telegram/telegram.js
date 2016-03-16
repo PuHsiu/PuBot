@@ -7,8 +7,7 @@ module.exports = (function(){
         handlers = require("./commandHandler"),
         bodyParser = require('body-parser'),
         EventEmitter = require('events').EventEmitter,
-        controller,
-        missionQueue = [];
+        controller;
 
     function init( c ){
         controller = c;
@@ -37,10 +36,10 @@ module.exports = (function(){
                         let mission = {};
 
                         mission.source = {
-                            mId: missionQueue.push(mission),
                             module: "Telegram",
                             port: "botAPI"
                         };
+
                         mission.next = {
                             module: command.type,
                             port: "exec"
@@ -51,7 +50,7 @@ module.exports = (function(){
 
                 controller.emit( "logic", mission );
             }
-            
+
             res.send("^_<");
             next();
         });
