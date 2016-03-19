@@ -26,6 +26,8 @@ module.exports = (function(){
 
             var message = req.body.message;
 
+            res.send("^_<");
+
             if( message.text ){
 
                 let command = parseUserInput(message.text);
@@ -55,7 +57,6 @@ module.exports = (function(){
 
             }
 
-            res.send("^_<");
             next();
         });
 
