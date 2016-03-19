@@ -5,6 +5,7 @@ module.exports = (function(){
 
     var telegram = require("./telegramBotAPI"),
         handlers = require("./commandHandler"),
+        Chat = require("./chat"),
         bodyParser = require('body-parser'),
         EventEmitter = require('events').EventEmitter,
         controller;
@@ -46,6 +47,7 @@ module.exports = (function(){
 
                         [ mission.next.port, mission.param ] = handlers[command.type](command.args);
                         mission.param.command = command.type;
+                        mission.param.chat = Chat.createByMessage(message);
 
                         controller.emit( "logic", mission );
                     }
@@ -77,7 +79,7 @@ module.exports = (function(){
 
     var interfaces = new EventEmitter();
     interfaces.on("botAPI", function(mission){
-        telegram.sendMsg(mission.param.command, mission.param);
+        Chat.send(mission.param.chat, mission.param);
     });
 
     return {

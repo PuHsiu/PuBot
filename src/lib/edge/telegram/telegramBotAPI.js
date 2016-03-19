@@ -8,34 +8,19 @@ module.exports = (function(){
 
     var resultHandler = {
         echo: (result) => {
-            return result.msg;
+            return {
+                type: "msg",
+                result: result.msg
+            };
         },
         kktix: (result) => {
             var command = result.kkCommand;
-            return result.tickets.map((e)=>{
-                return `${e.ticketType} ${e.closed ? "(售畢)" : ""}`;
-            }).join("\n");
-        }
-    };
-
-    var proto = {
-        constructor: Telegram,
-        sendMsg: function( command, result ){
-            if( !config.chat_id ){
-                throw new Error("Unable to get chat_id. Please spec it in config.json with property: chat_id.");
-            }
-            return new Promise((resolve, reject)=>{
-                request.post({
-                    url: this.botAPI+"sendMessage",
-                    form: {
-                        chat_id: config.chat_id,
-                        text: resultHandler[command](result)
-                    }
-                }, (err, response, body)=>{
-                    if( err ) reject(err);
-                    resolve( {response, body} );
-                })
-            });
+            return {
+                type: "msg",
+                result: result.tickets.map((e, i)=>{
+                    return `[${i}] ${e.ticketType} ${e.closed ? "(售畢)" : ""}`;
+                }).join("\n")
+            };
         }
     };
 
@@ -45,13 +30,38 @@ module.exports = (function(){
             throw new Error("Unable to parse API token. Please spec it in config.json with property: token.");
         }
 
-        var botAPI = "https://api.telegram.org/bot"+config.token+"/";
-
-        return {
-            __proto__: proto,
-            botAPI
-        }
+        this.botAPI = "https://api.telegram.org/bot"+config.token+"/";
     };
 
-    return Telegram();
+    Telegram.prototype.send = function( chatId, message ) {
+        var command = message.command,
+            { type, result } = resultHandler[command](message);
+
+        if( "msg" === type ){
+            return this.sendMessage( chatId, result );
+        } else {
+            throw new Error("Unexception Error.");
+        }
+
+    };
+    
+    Telegram.prototype.sendMessage = function( chatId, message ){
+        console.log(this.botAPI+"sendMessage");
+        console.log(chatId);
+        console.log(message);
+        return new Promise((resolve, reject)=>{
+            request.post({
+                url: this.botAPI+"sendMessage",
+                form: {
+                    chat_id: chatId,
+                    text: message
+                }
+            }, (err, response, body)=>{
+                if( err ) reject(err);
+                resolve( {response, body} );
+            })
+        });
+    };
+
+    return new Telegram();
 })();
