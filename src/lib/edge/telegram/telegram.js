@@ -52,9 +52,15 @@ module.exports = (function(){
                         mission.param.chat = Chat.createByMessage(message);
 
                         controller.emit( "logic", mission );
+                    } else {
+                        throw new Error(`Command ${command.type} is not supported.`);
                     }
+                } else {
+                    throw new Error( `Cannot Parse the command.` );
                 }
 
+            } else {
+                throw new Error( "Unexcept Error Happened.");
             }
 
             next();
