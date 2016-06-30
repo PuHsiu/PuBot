@@ -48,13 +48,17 @@ module.exports = (function(){
             "event": (args)=>{
                 options.event = args[0];
             },
+            "delay": (args)=>{
+                options.delay = args[0];
+            },
             "ticket": (args)=>{
                 options.tickets = args;
             }
         };
 
         var commandMapping = {
-            "check": "check"
+            "check": "check",
+            "notify": "notify"
         }
 
         if( !commandMapping[args[0]] ){

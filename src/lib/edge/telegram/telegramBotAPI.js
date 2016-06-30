@@ -17,7 +17,7 @@ module.exports = (function(){
             var command = result.kkCommand;
             return {
                 type: "msg",
-                result: result.tickets.map((e, i)=>{
+                result:  (result.tickets.allClosed ? "目前所有票種均已售畢 (╥﹏╥)\n" : "") + result.tickets.map((e, i)=>{
                     return `[${i}] ${e.ticketType} ${e.closed ? "(售畢)" : ""}`;
                 }).join("\n")
             };

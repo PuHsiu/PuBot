@@ -58,11 +58,55 @@ module.exports = (function(){
 
             result = [].slice.call(result);
 
+            var allClosed = !!htmlParser(".btn-no-tickets").length
+            result.allClosed = allClosed
+
+
             return Promise.resolve(result);
         });
     }
 
     interfaces.on("notify", ( mission )=>{
+          
+        if (!mission.param.organization || !mission.param.event) {
+            controller.emit("error", {
+                param: {
+                    source: mission.source,
+                    msg: "Please setup option \"organization\" and \"event\""
+                }
+            });
+
+            return;
+        }
+          
+        var delay = mission.param.delay * 1000 || 3600 * 1000
+
+        getTicketQuota(mission.param.organization, mission.param.event).then(function (tickets) {
+            var param = mission.param;
+            param.tickets = tickets;
+
+            var newMission = {
+                next: mission.source,
+                param: param
+            };
+
+            controller.emit("logic", newMission);
+        });
+                
+        setTimeout(function loop(){
+            getTicketQuota(mission.param.organization, mission.param.event).then(function (tickets) {
+                var param = mission.param;
+                param.tickets = tickets;
+
+                var newMission = {
+                    next: mission.source,
+                    param: param
+                };
+
+                controller.emit("logic", newMission);
+            });
+            setTimeout(loop, delay);
+        }, delay)
 
     });
 
@@ -78,8 +122,6 @@ module.exports = (function(){
 
             return;
         }
-
-        var quota = [];
 
         getTicketQuota( 
             mission.param.organization, 
