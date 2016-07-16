@@ -66,7 +66,7 @@ module.exports = (function(){
             next();
         });
 
-        app.listen( process.env.port || 30001, function( ...args ){
+        app.listen( process.env.NODE_PORT || 30001, process.env.NODE_IP || "localhost", function( ...args ){
             console.log("Server Started.");
         });
     }
