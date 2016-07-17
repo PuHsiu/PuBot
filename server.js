@@ -1,5 +1,6 @@
 var fs = require('fs'),
-    EventEmitter = require('events').EventEmitter;
+    EventEmitter = require('events').EventEmitter,
+    route = require('./lib/core/route');
 
 ;(function initModules(){
 
@@ -16,6 +17,12 @@ var fs = require('fs'),
         console.log(error);
     });
 
+    rootRouter = route.regist("");
+    rootRouter.get("/", function(req, res, next){
+      res.send("It's work.");
+    })
+    rootRouter.mount();
+
     ["./lib/edge/", "./lib/logic/"].forEach((path) => {
         promiseQueue.push(new Promise((resolve, reject) => {
             fs.readdir(path, (err, files)=>{
@@ -26,8 +33,14 @@ var fs = require('fs'),
             files.forEach((file)=>{
                 var module = require( path+file );
                 modules[module.name] = module;
-                module.init && module.init(controller);
-            });   
+                module.init && module.init(controller, {regist: route.regist});
+            });
+
+            return Promise.resolve();
         }));
     });
+
+    Promise.all(promiseQueue).then(()=>{
+      route.start()
+    }, (r) => {console.log(r)})
 })();
