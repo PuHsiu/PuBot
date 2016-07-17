@@ -25,10 +25,10 @@
     "request": "^2.69.0",
     "require": "^2.4.20"
   },
-  "main": "./start.js",
+  "main": "./server.js",
   "private": true,
   "scripts": {
-      "start": "node --use_strict start.js"
+      "start": "node server.js"
   },
   "bugs": {
     "url": "https://github.com/PuHsiu/PuBot/issues"
