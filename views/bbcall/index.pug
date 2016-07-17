@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= BBCall
+    link(rel='stylesheet',href='/stylesheets/style.css')
+  body
+    if result && result.status == 0
+      h2 傳送成功 :))
+    form(method="POST")
+      label 
+        span 您的大名：
+        input(type="text",name="sender")
+      label
+        span 簡易訊息
+        input(type="text",name="message")
+      input(type="submit",value="送出訊息")
