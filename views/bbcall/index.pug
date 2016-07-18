@@ -2,15 +2,22 @@ doctype html
 html
   head
     title= BBCall
-    link(rel='stylesheet',href='/stylesheets/style.css')
+    link(rel='stylesheet',href='/css/bbcall.css')
   body
     if result && result.status == 0
-      h2 傳送成功 :))
-    form(method="POST")
-      label 
-        span 您的大名：
-        input(type="text",name="sender")
-      label
-        span 簡易訊息
-        input(type="text",name="message")
-      input(type="submit",value="送出訊息")
+      .message 傳送成功 :))
+    .formWrapper
+      form(method="POST")
+        .inputWrapper
+          label
+            span 您的大名：
+            input(type="text",name="sender")
+        .inputWrapper
+          label
+            span 訊息內容：
+            input(type="text",name="message")
+        .inputWrapper
+          .submitWrapper
+            label
+              .submit 送出訊息
+              input(type="submit")

@@ -1,0 +1,105 @@
+
+body {
+  background: #FF8888;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.formWrapper {
+  margin-top: 20px;
+  padding: 15px;
+  width: 300px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  border-radius:4px;
+	border:1px solid #ffffff;
+}
+
+.inputWrapper {
+  text-align: center;
+}
+
+.inputWrapper ~ .inputWrapper {
+  margin-top: 15px;
+}
+
+.submit {
+	-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.submit:hover {
+	background-color:#eb675e;
+}
+.submit:active {
+	position:relative;
+	top:1px;
+}
+
+.submit ~ input {
+  display: none;
+}
+
+.submitWrapper {
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+@keyframes message_disappear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.message {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  background: #CC0000;
+  border: 1px solid #FFFFFF;
+  padding: 5px;
+  color: white;
+
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-name: message_disappear;
+  animation-fill-mode: forwards;
+}
