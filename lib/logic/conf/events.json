@@ -1,0 +1,24 @@
+{
+    "MSCOC-201608": {
+        "name": "Microsoft Community Open Camp",
+        "dates": [1472256000],
+        "list": [
+            {
+                "title": "開幕 Opening",
+                "description": "",
+                "start": "09:20",
+                "end": "09:30",
+                "speakers": ["劉念臻"],
+                "rooms": ["R0", "R1", "R2", "R3"]
+            },
+            {
+                "title": "Microsoft擁抱開源文化與技術的現在與未來",
+                "description": "",
+                "start": "09:30",
+                "end": "10:30",
+                "speakers": ["上官林傑"],
+                "rooms": ["R0", "R1", "R2", "R3"]
+            }
+        ]
+    }
+}

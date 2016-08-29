@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= content.name
+    link(rel='stylesheet',href='/css/conf.css')
+  body
+    div.bodyWrapper
+      h1= content.name
+      .tableWrapper
+        each agenda, idx in content.list
+          form(method="POST")
+            label
+              input.hide(type="submit" name="agendaId" value=idx)
+              - var registed = !!~config.registList.indexOf(""+idx);
+              .rowWrapper(class=registed?"registed":"")
+                .contentWrapper= agenda.title
+                .contentWrapper= agenda.start + " ~ " + agenda.end
+                .contentWrapper
+                  for speaker in agenda.speakers 
+                    .speaker= speaker
+                .contentWrapper
+                  for room in agenda.rooms
+                    .room= room
+                
+              
+            
+            
+            
