@@ -34,6 +34,7 @@ var fs = require('fs'),
                 var module = require( path+file );
                 modules[module.name] = module;
                 module.init && module.init(controller, {regist: route.regist});
+                console.log("Init Module......", module.name)
             });
 
             return Promise.resolve();
