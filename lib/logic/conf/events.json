@@ -1,8 +1,166 @@
 {
-    "MSCOC-201608": {
-        "name": "Microsoft Community Open Camp",
-        "dates": [1472256000],
+    "HadoopCon-2016": {
+        "name": "HadoopCon 2016",
+        "dates": [],
         "list": [
+            {
+                "title": "Opening 開場",
+                "description": "",
+                "start": "09:25",
+                "end": "09:30",
+                "speakers": ["Unknown"],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "Stream Processing with Beam and Google Cloud Dataflow",
+                "description": "",
+                "start": "10:10",
+                "end": "10:50",
+                "speakers": ["Eric Anderson , Product Manager, Google"],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "Machine Learning, Hive",
+                "description": "",
+                "start": "10:50",
+                "end": "11:30",
+                "speakers": ["Makoto Yui , Research Engineer , Treasure Data"],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "Apache Kylin 架構及案例",
+                "description": "",
+                "start": "11:30",
+                "end": "12:10",
+                "speakers": ["Luke Han (韩卿) , CEO , Kyligence"],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "Achieve Big Data Analytic Platform with Lambda Architecture on Cloud",
+                "description": "",
+                "start": "13:30",
+                "end": "14:10",
+                "speakers": ["繆維武 , Trend Micro "],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "消費者網路行為與偏好",
+                "description": "",
+                "start": "13:30",
+                "end": "14:10",
+                "speakers": ["徐凡耘 , 一魚多吃"],
+                "rooms": ["R1"]
+            },
+            {
+                "title": "High performance hardware accelerator for optimizing Hadoop",
+                "description": "",
+                "start": "13:30",
+                "end": "14:10",
+                "speakers": ["張智淳 , WASAI technology"],
+                "rooms": ["R2"]
+            },
+            {
+                "title": "YARN Resource Management Using Machine Learning",
+                "description": "",
+                "start": "14:10",
+                "end": "14:50",
+                "speakers": ["劉一正 , Trend Micro"],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "Potential Applications using Class Frequency Distribution of Maximal Repeats extracted from Tagged Sequential data",
+                "description": "",
+                "start": "14:10",
+                "end": "14:50",
+                "speakers": ["王經篤 , 亞洲大學"],
+                "rooms": ["R1"]
+            },
+            {
+                "title": "How to plan a Hadoop cluster for Testing and production environment",
+                "description": "",
+                "start": "14:10",
+                "end": "14:50",
+                "speakers": ["吳凌志 , 炬識科技"],
+                "rooms": ["R2"]
+            },
+            {
+                "title": "Log event stream processing in Flink way",
+                "description": "",
+                "start": "15:10",
+                "end": "15:50",
+                "speakers": ["賴宗智 , Quanta Cloud Technology"],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "ETC 資料的大數據應用與分析",
+                "description": "",
+                "start": "15:10",
+                "end": "15:50",
+                "speakers": ["賈斯汀"],
+                "rooms": ["R1"]
+            },
+            {
+                "title": "varOne – An Open Source Monitor for Apache Spark",
+                "description": "",
+                "start": "15:10",
+                "end": "15:50",
+                "speakers": ["何永安, 亦思科技"],
+                "rooms": ["R2"]
+            },
+            {
+                "title": "Essentials of Reliable Stream Processing: A Visual Demo using Apache Flink",
+                "description": "",
+                "start": "15:50",
+                "end": "16:30",
+                "speakers": ["戴資力 , Flink.TW"],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "如何建置關鍵字精靈",
+                "description": "",
+                "start": "15:50",
+                "end": "16:30",
+                "speakers": ["施晨揚  , PIXNET"],
+                "rooms": ["R1"]
+            },
+            {
+                "title": "利用 Jupyter + Ansible 快速佈署 Spark",
+                "description": "",
+                "start": "15:50",
+                "end": "16:30",
+                "speakers": ["黃俊宏 , 國網中心"],
+                "rooms": ["R2"]
+            },
+            {
+                "title": "New Wars for Reputation: From Understanding to Problem Solving-Applying Deep Learning to Defend Against the Deceptive Advertising",
+                "description": "",
+                "start": "16:30",
+                "end": "17:10",
+                "speakers": ["TonTon Huang, Leopard Mobile"],
+                "rooms": ["R0"]
+            },
+            {
+                "title": "Implement Real-time Centralized Logging System by Elastic Stack",
+                "description": "",
+                "start": "16:30",
+                "end": "17:10",
+                "speakers": ["Len Chang , WeMo Scooter"],
+                "rooms": ["R1"]
+            },
+            {
+                "title": "用 Jupyter Notebook hold 住一個上線 Spark Machine Learning 專案實戰",
+                "description": "",
+                "start": "16:30",
+                "end": "17:10",
+                "speakers": ["陳韋志 , PIXNET"],
+                "rooms": ["R2"]
+            }
+        ]
+    },
+        "MSCOC-201608": {
+            "name": "Microsoft Community Open Camp",
+            "dates": [1472256000],
+            "list": [
             {
                 "title": "開幕 Opening",
                 "description": "",
@@ -19,6 +177,6 @@
                 "speakers": ["上官林傑"],
                 "rooms": ["R0", "R1", "R2", "R3"]
             }
-        ]
-    }
+            ]
+        }
 }
