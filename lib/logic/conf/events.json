@@ -20,17 +20,16 @@
         "name": "JSDC 2016 Day 2",  
         "dates": [],
         "list": [
-            {"title":"How to adapt to change & exploring Vue.js","description":"","start":"09:40","end":"10:30","speakers":[" Blake Newman (Sainsbury's)"],"rooms":["R0","R1"]},
-            {"title":"GraphQL 經驗分享","description":"","start":"10:50","end":"11:30","speakers":[" Steven Su"],"rooms":["R0"]},
-            {"title":"JavaScript 的 SEO 奧義","description":"","start":"10:50","end":"11:30","speakers":[" Jose & Wildcat"],"rooms":["R1"]},
-            {"title":"ThinkJS - 使用 ES2015+ 特性開發 Node.js 項目","description":"","start":"12:20","end":"13:10","speakers":[" 李成銀 (奇舞團)"],"rooms":["R0","R1"]},
-            {"title":"使用 Angular 2 與 Firebase 實現 Serverless 網站架構","description":"","start":"13:30","end":"14:10","speakers":[" Will 保哥"],"rooms":["R0"]},
-            {"title":"OTP 已死 U2F 永存：JavaScript U2F 兩步驟驗證實戰","description":"","start":"13:30","end":"14:10","speakers":[" Jong-Shian Wu"],"rooms":["R1"]},
-            {"title":"淺談網站自動化測試 - 以 WebdriverIO 框架為例","description":"","start":"14:40","end":"15:20","speakers":[" 劉艾霖"],"rooms":["R0"]},
-            {"title":"fbreactions.io - 用AWS Lambda 爬數據視覺化","description":"","start":"14:40","end":"15:20","speakers":[" 劉俊彥(Vincent)"],"rooms":["R1"]},
-            {"title":"Universal JavaScript?","description":"","start":"15:40","end":"16:20","speakers":[" 洪名辰"],"rooms":["R0"]},
-            {"title":"React Native - dispatch route like web uri","description":"","start":"15:40","end":"16:20","speakers":[" Tomas Lin"],"rooms":["R1"]},
-            {"title":"How I learned to stop worrying and love the Polymer toolbox","description":"","start":"16:40","end":"17:30","speakers":[" Monica Dinculescu (Google Inc.)"],"rooms":["R0","R1"]}
+            {"title":"Reactive Programming In Action with RxJS 5","description":"","start":"09:40","end":"10:30","speakers":[" Paul Taylor(Graphistry, Inc.)"],"rooms":["R0","R1"]},
+            {"title":"NIME: 使用 nodejs 快快樂樂開發輸入法","description":"","start":"10:50","end":"11:30","speakers":[" Lee"],"rooms":["R0"]},
+            {"title":"React Native + Redux 簡單也不簡單","description":"","start":"10:50","end":"11:30","speakers":[" 李欣龍(山姆大叔)"],"rooms":["R1"]},
+            {"title":"CodexJS: a conditional module bundler","description":"","start":"12:20","end":"13:10","speakers":[" Alex Liu (Netflix)"],"rooms":["R0","R1"]},
+            {"title":"Data Visualization performance optimization","description":"","start":"13:30","end":"14:10","speakers":[" Jim Chang (吉姆)"],"rooms":["R0"]},
+            {"title":"Metaprogramming in ES2015","description":"","start":"13:30","end":"14:10","speakers":[" kidwm"],"rooms":["R1"]},
+            {"title":"Dive into React Performance","description":"","start":"14:40","end":"15:20","speakers":[" CT"],"rooms":["R0"]},
+            {"title":"rabbitMQ 與 Node.js 實戰應用","description":"","start":"14:40","end":"15:20","speakers":["  Jason Cheng"],"rooms":["R1"]},
+            {"title":"親愛的，我們來土炮一個 Google Docs 吧！","description":"","start":"15:40","end":"16:20","speakers":[" Fred Chien"],"rooms":["R0"]},
+            {"title":"Vue.js 實戰分享 - 使用 Vue.js 打造產品服務的 dashboard","description":"","start":"15:40","end":"16:20","speakers":[" Cyril Yu"],"rooms":["R1"]}
         ]
     },
     "HadoopCon-2016": {
