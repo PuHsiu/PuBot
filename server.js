@@ -1,6 +1,7 @@
 var fs = require('fs'),
     EventEmitter = require('events').EventEmitter,
-    route = require('./lib/core/route');
+    route = require('./lib/core/route'),
+    dbConn = require("./lib/core/mysql");
 
 ;(function initModules(){
 
@@ -33,7 +34,7 @@ var fs = require('fs'),
             files.forEach((file)=>{
                 var module = require( path+file );
                 modules[module.name] = module;
-                module.init && module.init(controller, {regist: route.regist});
+                module.init && module.init(controller, { regist: route.regist }, dbConn);
                 console.log("Init Module......", module.name)
             });
 

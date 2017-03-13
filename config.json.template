@@ -1,3 +1,4 @@
 {
-    "serverEndPoint": "YOUR_SERVER_URL"
+    "serverEndPoint": "YOUR_SERVER_URL",
+    "databaseEndPoint": "YOUR_DB_DSN"
 }

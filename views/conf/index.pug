@@ -11,7 +11,7 @@ html
           form(method="POST")
             label
               input.hide(type="submit" name="agendaId" value=idx)
-              - var registed = !!~config.registList.indexOf(""+idx);
+              - var registed = !!registList[+idx];
               .rowWrapper(class=registed?"registed":"")
                 .contentWrapper= agenda.title
                 .contentWrapper= agenda.start + " ~ " + agenda.end
